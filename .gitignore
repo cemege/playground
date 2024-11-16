@@ -1,0 +1,42 @@
+# Xcode build artifacts and temporary files
+DerivedData/
+build/
+*.xcworkspace
+!default.xcworkspace
+*.xcuserstate
+xcuserdata/
+
+# Swift Package Manager
+.build/
+Package.resolved
+
+# Code signing
+*.pem
+*.cer
+*.mobileprovision
+*.dSYM.zip
+*.bcsymbolmap
+
+# Archives
+*.xcarchive
+
+# App Store metadata
+*.itmsp
+
+# Provisioning profiles
+*.mobileprovision
+
+# SwiftUI Previews
+*.preview-thumbnails
+
+# Other
+*.DS_Store
+*.swp
+*.lock
+*.xcscmblueprint
+
+# Generated schema
+*.schema.json
+
+# Environment variables files
+.env

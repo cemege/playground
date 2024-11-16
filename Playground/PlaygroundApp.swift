@@ -2,7 +2,7 @@
 //  PlaygroundApp.swift
 //  Playground
 //
-//  Created by cemegeArabam on 14.09.2024.
+//  Created by Cem Ege on 14.09.2024.
 //
 
 import SwiftUI

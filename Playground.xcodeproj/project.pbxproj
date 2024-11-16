@@ -3,29 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB0DDDCC2C95F44E002349CE /* PlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0DDDCB2C95F44E002349CE /* PlaygroundApp.swift */; };
-		BB0DDDCE2C95F44E002349CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0DDDCD2C95F44E002349CE /* ContentView.swift */; };
-		BB0DDDD02C95F44F002349CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0DDDCF2C95F44F002349CE /* Assets.xcassets */; };
-		BB0DDDD32C95F44F002349CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0DDDD22C95F44F002349CE /* Preview Assets.xcassets */; };
+		BB483BA92CE91CFE008C5B39 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB483BA82CE91CFE008C5B39 /* Kingfisher */; };
+		BB483BAC2CE91FFF008C5B39 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = BB483BAB2CE91FFF008C5B39 /* Components */; };
+		BBD8D4392C9B17F500A623BC /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = BBD8D4382C9B17F500A623BC /* Extensions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB0DDDC82C95F44E002349CE /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB0DDDCB2C95F44E002349CE /* PlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundApp.swift; sourceTree = "<group>"; };
-		BB0DDDCD2C95F44E002349CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BB0DDDCF2C95F44F002349CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BB0DDDD22C95F44F002349CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BB2E03652CE91B0400D78277 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Packages/Components,
+				Packages/Extensions,
+			);
+			target = BB0DDDC72C95F44E002349CE /* Playground */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BB2E035F2CE91B0400D78277 /* Playground */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BB2E03652CE91B0400D78277 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Playground; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BB0DDDC52C95F44E002349CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB483BA92CE91CFE008C5B39 /* Kingfisher in Frameworks */,
+				BBD8D4392C9B17F500A623BC /* Extensions in Frameworks */,
+				BB483BAC2CE91FFF008C5B39 /* Components in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,8 +48,9 @@
 		BB0DDDBF2C95F44E002349CE = {
 			isa = PBXGroup;
 			children = (
-				BB0DDDCA2C95F44E002349CE /* Playground */,
+				BB2E035F2CE91B0400D78277 /* Playground */,
 				BB0DDDC92C95F44E002349CE /* Products */,
+				BB0DDDF32C960953002349CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,23 +62,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BB0DDDCA2C95F44E002349CE /* Playground */ = {
+		BB0DDDF32C960953002349CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB0DDDCB2C95F44E002349CE /* PlaygroundApp.swift */,
-				BB0DDDCD2C95F44E002349CE /* ContentView.swift */,
-				BB0DDDCF2C95F44F002349CE /* Assets.xcassets */,
-				BB0DDDD12C95F44F002349CE /* Preview Content */,
 			);
-			path = Playground;
-			sourceTree = "<group>";
-		};
-		BB0DDDD12C95F44F002349CE /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				BB0DDDD22C95F44F002349CE /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,7 +84,15 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				BB2E035F2CE91B0400D78277 /* Playground */,
+			);
 			name = Playground;
+			packageProductDependencies = (
+				BBD8D4382C9B17F500A623BC /* Extensions */,
+				BB483BA82CE91CFE008C5B39 /* Kingfisher */,
+				BB483BAB2CE91FFF008C5B39 /* Components */,
+			);
 			productName = Playground;
 			productReference = BB0DDDC82C95F44E002349CE /* Playground.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +121,9 @@
 				Base,
 			);
 			mainGroup = BB0DDDBF2C95F44E002349CE;
+			packageReferences = (
+				BB483BA72CE91CFE008C5B39 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = BB0DDDC92C95F44E002349CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +138,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB0DDDD32C95F44F002349CE /* Preview Assets.xcassets in Resources */,
-				BB0DDDD02C95F44F002349CE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +148,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB0DDDCE2C95F44E002349CE /* ContentView.swift in Sources */,
-				BB0DDDCC2C95F44E002349CE /* PlaygroundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +206,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -205,6 +214,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -254,12 +264,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -275,18 +286,23 @@
 				DEVELOPMENT_TEAM = GW7G7YC46U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Playground;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cemege.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,18 +320,23 @@
 				DEVELOPMENT_TEAM = GW7G7YC46U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Playground;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cemege.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -344,6 +365,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB483BA72CE91CFE008C5B39 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB483BA82CE91CFE008C5B39 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB483BA72CE91CFE008C5B39 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		BB483BAB2CE91FFF008C5B39 /* Components */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Components;
+		};
+		BBD8D4382C9B17F500A623BC /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB0DDDC02C95F44E002349CE /* Project object */;
 }
