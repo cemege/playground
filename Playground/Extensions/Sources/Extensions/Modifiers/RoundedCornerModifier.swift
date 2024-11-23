@@ -28,4 +28,11 @@ public extension View {
             .overlay(RoundedCorner(radius: radius, corners: corners)
                 .stroke(borderColor, lineWidth: lineWidth))
     }
+    
+    func roundedCorners(
+        radius: CGFloat = 4,
+        corners: UIRectCorner = .allCorners
+    ) -> some View {
+        clipShape(RoundedCorner(radius: radius, corners: corners))
+    }
 }

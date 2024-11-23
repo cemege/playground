@@ -4,32 +4,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "Extensions",
-    platforms: [.iOS(.v15)],
+    name: "Network",
+    platforms: [.iOS(.v18)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Extensions",
-            targets: ["Extensions"]),
+            name: "Network",
+            targets: ["Network"])
     ],
-    
     dependencies: [
-        .package(
-            url: "https://github.com/onevcat/Kingfisher.git",
-            from: "8.1.0"
-        )
+        .package(name: "Extensions", path: "../Extensions")
     ],
-    
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Extensions",
+            name: "Network",
             dependencies: [
-                .product(
-                    name: "Kingfisher",
-                    package: "Kingfisher"
-                )
+                "Extensions"
             ]
         )
     ]

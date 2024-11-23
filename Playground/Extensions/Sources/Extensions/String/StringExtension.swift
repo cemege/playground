@@ -37,3 +37,8 @@ public extension String {
         return URL(string: self)
     }
 }
+
+// MARK: - Bundle
+public extension String {
+    static let appVersion = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String ?? ""
+}
