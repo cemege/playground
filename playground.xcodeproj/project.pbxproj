@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB0DDDC82C95F44E002349CE /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0DDDC82C95F44E002349CE /* playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -27,12 +27,12 @@
 				Network,
 				Router,
 			);
-			target = BB0DDDC72C95F44E002349CE /* Playground */;
+			target = BB0DDDC72C95F44E002349CE /* playground */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BB2E035F2CE91B0400D78277 /* Playground */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BB2E03652CE91B0400D78277 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Playground; sourceTree = "<group>"; };
+		BB2E035F2CE91B0400D78277 /* playground */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BB2E03652CE91B0400D78277 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = playground; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 		BB0DDDBF2C95F44E002349CE = {
 			isa = PBXGroup;
 			children = (
-				BB2E035F2CE91B0400D78277 /* Playground */,
+				BB2E035F2CE91B0400D78277 /* playground */,
 				BB0DDDC92C95F44E002349CE /* Products */,
 				BB0DDDF32C960953002349CE /* Frameworks */,
 			);
@@ -63,7 +63,7 @@
 		BB0DDDC92C95F44E002349CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB0DDDC82C95F44E002349CE /* Playground.app */,
+				BB0DDDC82C95F44E002349CE /* playground.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,9 +78,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB0DDDC72C95F44E002349CE /* Playground */ = {
+		BB0DDDC72C95F44E002349CE /* playground */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB0DDDD62C95F44F002349CE /* Build configuration list for PBXNativeTarget "Playground" */;
+			buildConfigurationList = BB0DDDD62C95F44F002349CE /* Build configuration list for PBXNativeTarget "playground" */;
 			buildPhases = (
 				BB0DDDC42C95F44E002349CE /* Sources */,
 				BB0DDDC52C95F44E002349CE /* Frameworks */,
@@ -91,9 +91,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				BB2E035F2CE91B0400D78277 /* Playground */,
+				BB2E035F2CE91B0400D78277 /* playground */,
 			);
-			name = Playground;
+			name = playground;
 			packageProductDependencies = (
 				BBD8D4382C9B17F500A623BC /* Extensions */,
 				BB483BA82CE91CFE008C5B39 /* Kingfisher */,
@@ -101,8 +101,8 @@
 				BB5203D92CF0DF3600772DC7 /* Network */,
 				BB5203E22CF0FAB200772DC7 /* Router */,
 			);
-			productName = Playground;
-			productReference = BB0DDDC82C95F44E002349CE /* Playground.app */;
+			productName = playground;
+			productReference = BB0DDDC82C95F44E002349CE /* playground.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -120,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BB0DDDC32C95F44E002349CE /* Build configuration list for PBXProject "Playground" */;
+			buildConfigurationList = BB0DDDC32C95F44E002349CE /* Build configuration list for PBXProject "playground" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -136,7 +136,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB0DDDC72C95F44E002349CE /* Playground */,
+				BB0DDDC72C95F44E002349CE /* playground */,
 			);
 		};
 /* End PBXProject section */
@@ -292,11 +292,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Playground/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"playground/Preview Content\"";
 				DEVELOPMENT_TEAM = GW7G7YC46U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Playground;
+				INFOPLIST_KEY_CFBundleDisplayName = playground;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,7 +308,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.cemege.Playground;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.cemege.playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -326,11 +326,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Playground/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"playground/Preview Content\"";
 				DEVELOPMENT_TEAM = GW7G7YC46U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Playground;
+				INFOPLIST_KEY_CFBundleDisplayName = playground;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,7 +342,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.cemege.Playground;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.cemege.playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -356,7 +356,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB0DDDC32C95F44E002349CE /* Build configuration list for PBXProject "Playground" */ = {
+		BB0DDDC32C95F44E002349CE /* Build configuration list for PBXProject "playground" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB0DDDD42C95F44F002349CE /* Debug */,
@@ -365,7 +365,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB0DDDD62C95F44F002349CE /* Build configuration list for PBXNativeTarget "Playground" */ = {
+		BB0DDDD62C95F44F002349CE /* Build configuration list for PBXNativeTarget "playground" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB0DDDD72C95F44F002349CE /* Debug */,

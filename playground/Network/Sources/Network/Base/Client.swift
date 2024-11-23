@@ -7,15 +7,14 @@
 
 import Foundation
 
-public actor Client {
+@Observable
+public final class Client: Sendable {
     
     // MARK: - Properties
-    public static let shared = Client()
-    
     private let session = URLSession.shared
     
     // MARK: - init
-    private init() {}
+    public init() {}
     
     // MARK: - Fetch
     public func fetch<T: Decodable>(request: Request, _ decodable: T.Type) async -> T? {

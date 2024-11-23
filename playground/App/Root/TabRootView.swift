@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Network
 import Router
 
 struct TabRootView: View {
     
     // MARK: - Properties
+    @Environment(Client.self) var client
     @Environment(Router.self) var router
     
     let tab: AppTab

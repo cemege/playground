@@ -13,8 +13,7 @@ import Router
 struct PlaygroundApp: App {
     
     // MARK: - Properties
-    let client = Client.shared
-    
+    @State var client: Client = .init()
     @State var router: Router = .init()
     
     var body: some Scene {

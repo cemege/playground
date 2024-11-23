@@ -11,7 +11,7 @@ import Network
 struct MemberView: View {
     
     // MARK: - Properties
-    @Environment(\.client) var client: Client
+    @Environment(Client.self) var client: Client
     
     @State private var member: MemberResponse?
     
