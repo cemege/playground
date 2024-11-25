@@ -26,6 +26,12 @@ public struct HomeView: View {
                 .onTapGesture {
                     router.navigate(to: .homeList, tab: .home)
                 }
+            
+            Text("Move to Profile")
+                .font(.headline)
+                .onTapGesture {
+                    router.move(to: .profile, destination: .profileSettings)
+                }
         }
         .padding()
     }

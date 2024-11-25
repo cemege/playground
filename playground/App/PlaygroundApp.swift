@@ -18,8 +18,6 @@ struct PlaygroundApp: App {
     @State var router: Router = .init()
     
     var body: some Scene {
-        @Bindable var router = router
-        
         WindowGroup {
             TabView(selection: $router.selectedTab) {
                 ForEach(AppTab.allCases) { tab in

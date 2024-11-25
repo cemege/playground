@@ -41,6 +41,11 @@ public final class Router {
         paths[tab ?? selectedTab]?.append(destination)
     }
     
+    public func move(to tab: AppTab, destination: RouterDestination) {
+        selectedTab = tab
+        paths[tab]?.append(destination)
+    }
+    
     public func popToRoot(for tab: AppTab) {
         paths[tab] = []
     }

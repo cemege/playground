@@ -1,5 +1,5 @@
 //
-//  ClientKey.swift
+//  ClientEnvironmentKey.swift
 //  Network
 //
 //  Created by Cem Ege on 22.11.2024.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-private struct ClientKey: EnvironmentKey {
+private struct ClientEnvironmentKey: EnvironmentKey {
     static let defaultValue: Client = Client()
 }
 
 public extension EnvironmentValues {
     var client: Client {
-        get { self[ClientKey.self] }
-        set { self[ClientKey.self] = newValue }
+        get { self[ClientEnvironmentKey.self] }
+        set { self[ClientEnvironmentKey.self] = newValue }
     }
 }
