@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Extensions
 import Network
 import Router
 
@@ -17,18 +18,23 @@ struct PlaygroundApp: App {
     @State var router: Router = .init()
     
     var body: some Scene {
+        @Bindable var router = router
+        
         WindowGroup {
-            ScrollView(.horizontal) {
-                LazyHStack {
-                    ForEach(AppTab.allCases) { tab in
-                        TabRootView(tab: tab)
-                            .id(tab)
-                    }
+            TabView(selection: $router.selectedTab) {
+                ForEach(AppTab.allCases) { tab in
+                    TabRootView(tab: tab)
+                        .tag(tab)
                 }
-                .scrollTargetLayout()
-                .environment(\.client, client)
-                .environment(router)
             }
+            .environment(client)
+            .environment(router)
+            .overlay(alignment: .bottom) {
+                TabbarView()
+                    .environment(router)
+                    .ignoresSafeArea(.keyboard)
+            }
+            .ignoresSafeArea(.keyboard)
         }
     }
 }

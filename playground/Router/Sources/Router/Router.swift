@@ -11,25 +11,42 @@ import Observation
 @Observable
 @MainActor
 public final class Router {
-    private var paths: [AppTab: [Destination]] = [:]
     
-    public subscript(tab: AppTab) -> [Destination] {
+    // MARK: - Properties
+    public var presentedSheet: SheetDestination?
+    
+    // MARK: - Path Subscript
+    private var paths: [AppTab: [RouterDestination]] = [
+        .home: [],
+        .search: [],
+        .profile: []
+    ]
+    
+    public subscript(tab: AppTab) -> [RouterDestination] {
         get { paths[tab] ?? [] }
         set { paths[tab] = newValue }
     }
     
+    // MARK: - SelectedTab Path
+    public var selectedTab: AppTab = .home
+    public var selectedTabPath: [RouterDestination] {
+        paths[selectedTab] ?? []
+    }
+    
+    // MARK: - init
     public init() {}
     
-    public func navigate(to destination: Destination, tab: AppTab) {
-        paths[tab]?.append(destination)
+    // MARK: - Navigation
+    public func navigate(to destination: RouterDestination, tab: AppTab? = nil) {
+        paths[tab ?? selectedTab]?.append(destination)
     }
     
     public func popToRoot(for tab: AppTab) {
         paths[tab] = []
     }
     
-    public func pop(tab: AppTab) {
-        paths[tab]?.removeLast()
+    public func pop(tab: AppTab? = nil) {
+        paths[tab ?? selectedTab]?.removeLast()
     }
 }
 
@@ -41,18 +58,27 @@ public enum AppTab: String, CaseIterable, Identifiable, Hashable, Sendable {
     
     public var icon: String {
         switch self {
-        case .home: return "homeIcon"
-        case .search: return "searchIcon"
-        case .profile: return "profileIcon"
+        case .home: return "house"
+        case .search: return "magnifyingglass"
+        case .profile: return "person"
         }
     }
 }
 
-public extension EnvironmentValues {
-    @Entry var tab: AppTab = .home
+extension EnvironmentValues {
+  @Entry public var currentTab: AppTab = .home
 }
 
-// MARK: - Destionation Types
-public enum Destination: Hashable {
-     case accountSettings
+// MARK: - RouterDestionation
+public enum RouterDestination: Hashable {
+    case homeList
+    case searchResult
+    case profileSettings
+}
+
+// MARK: - Sheet Destination
+public enum SheetDestination: Hashable, Identifiable {
+    case login
+    
+    public var id: Int { self.hashValue }
 }

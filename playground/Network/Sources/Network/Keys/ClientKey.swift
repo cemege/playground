@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+private struct ClientKey: EnvironmentKey {
+    static let defaultValue: Client = Client()
+}
+
 public extension EnvironmentValues {
-    @Entry var client: Client = .init()
+    var client: Client {
+        get { self[ClientKey.self] }
+        set { self[ClientKey.self] = newValue }
+    }
 }

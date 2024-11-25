@@ -11,6 +11,9 @@
 		BB483BAC2CE91FFF008C5B39 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = BB483BAB2CE91FFF008C5B39 /* Components */; };
 		BB5203DA2CF0DF3600772DC7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = BB5203D92CF0DF3600772DC7 /* Network */; };
 		BB5203E32CF0FAB200772DC7 /* Router in Frameworks */ = {isa = PBXBuildFile; productRef = BB5203E22CF0FAB200772DC7 /* Router */; };
+		BB7927302CF4B321006FAD83 /* HomeUI in Frameworks */ = {isa = PBXBuildFile; productRef = BB79272F2CF4B321006FAD83 /* HomeUI */; };
+		BB7927322CF4B321006FAD83 /* ProfileUI in Frameworks */ = {isa = PBXBuildFile; productRef = BB7927312CF4B321006FAD83 /* ProfileUI */; };
+		BB7927342CF4C609006FAD83 /* SearchUI in Frameworks */ = {isa = PBXBuildFile; productRef = BB7927332CF4C609006FAD83 /* SearchUI */; };
 		BBD8D4392C9B17F500A623BC /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = BBD8D4382C9B17F500A623BC /* Extensions */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,7 @@
 			membershipExceptions = (
 				Components,
 				Extensions,
+				Features,
 				Network,
 				Router,
 			);
@@ -41,10 +45,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB5203E32CF0FAB200772DC7 /* Router in Frameworks */,
+				BB7927322CF4B321006FAD83 /* ProfileUI in Frameworks */,
 				BB483BA92CE91CFE008C5B39 /* Kingfisher in Frameworks */,
 				BB5203DA2CF0DF3600772DC7 /* Network in Frameworks */,
+				BB7927342CF4C609006FAD83 /* SearchUI in Frameworks */,
 				BBD8D4392C9B17F500A623BC /* Extensions in Frameworks */,
 				BB483BAC2CE91FFF008C5B39 /* Components in Frameworks */,
+				BB7927302CF4B321006FAD83 /* HomeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +107,9 @@
 				BB483BAB2CE91FFF008C5B39 /* Components */,
 				BB5203D92CF0DF3600772DC7 /* Network */,
 				BB5203E22CF0FAB200772DC7 /* Router */,
+				BB79272F2CF4B321006FAD83 /* HomeUI */,
+				BB7927312CF4B321006FAD83 /* ProfileUI */,
+				BB7927332CF4C609006FAD83 /* SearchUI */,
 			);
 			productName = playground;
 			productReference = BB0DDDC82C95F44E002349CE /* playground.app */;
@@ -404,6 +414,18 @@
 		BB5203E22CF0FAB200772DC7 /* Router */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Router;
+		};
+		BB79272F2CF4B321006FAD83 /* HomeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeUI;
+		};
+		BB7927312CF4B321006FAD83 /* ProfileUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProfileUI;
+		};
+		BB7927332CF4C609006FAD83 /* SearchUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SearchUI;
 		};
 		BBD8D4382C9B17F500A623BC /* Extensions */ = {
 			isa = XCSwiftPackageProductDependency;

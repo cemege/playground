@@ -8,11 +8,13 @@
 import SwiftUI
 import Network
 import Router
+import HomeUI
+import SearchUI
+import ProfileUI
 
 struct TabRootView: View {
     
     // MARK: - Properties
-    @Environment(Client.self) var client
     @Environment(Router.self) var router
     
     let tab: AppTab
@@ -23,38 +25,36 @@ struct TabRootView: View {
         
         NavigationStack(path: $router[tab]) {
             tab.rootView
-                .navigationBarHidden(true)
-                .navigationDestination(for: Destination.self) { destination in
+                .navigationDestination(for: RouterDestination.self) { destination in
                     switch destination {
-                    case .accountSettings:
-                        HStack {
-                            Text("Account Settings")
-                        }
+                    case .homeList:
+                        HomeListView()
+                        
+                    case .searchResult:
+                        SearchResultView()
+                        
+                    case .profileSettings:
+                        ProfileSettingsView()
                     }
                 }
+                .environment(\.currentTab, tab)
         }
-        .containerRelativeFrame([.horizontal, .vertical])
     }
 }
 
+@MainActor
 extension AppTab {
     @ViewBuilder
     fileprivate var rootView: some View {
         switch self {
         case .home:
-            HStack {
-                Text("Home")
-            }
+            HomeView()
             
         case .search:
-            HStack {
-                Text("Settings")
-            }
+            SearchView()
             
         case .profile:
-            HStack {
-                Text("Profile")
-            }
+            ProfileView()
         }
     }
 }
