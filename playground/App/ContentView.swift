@@ -8,7 +8,7 @@
 import SwiftUI
 import Extensions
 import Components
-import Member
+import MemberService
 
 struct ContentView: View {
     

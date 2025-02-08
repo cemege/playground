@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6A7A9022D57C4D500EF1A87 /* AuthService in Frameworks */ = {isa = PBXBuildFile; productRef = B6A7A9012D57C4D500EF1A87 /* AuthService */; };
+		B6A7A9042D57C4D500EF1A87 /* MemberService in Frameworks */ = {isa = PBXBuildFile; productRef = B6A7A9032D57C4D500EF1A87 /* MemberService */; };
 		BB483BA92CE91CFE008C5B39 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB483BA82CE91CFE008C5B39 /* Kingfisher */; };
 		BB483BAC2CE91FFF008C5B39 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = BB483BAB2CE91FFF008C5B39 /* Components */; };
 		BB5203DA2CF0DF3600772DC7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = BB5203D92CF0DF3600772DC7 /* Network */; };
@@ -30,6 +32,7 @@
 				Features,
 				Network,
 				Router,
+				Services,
 			);
 			target = BB0DDDC72C95F44E002349CE /* playground */;
 		};
@@ -46,8 +49,10 @@
 			files = (
 				BB5203E32CF0FAB200772DC7 /* Router in Frameworks */,
 				BB7927322CF4B321006FAD83 /* ProfileUI in Frameworks */,
+				B6A7A9042D57C4D500EF1A87 /* MemberService in Frameworks */,
 				BB483BA92CE91CFE008C5B39 /* Kingfisher in Frameworks */,
 				BB5203DA2CF0DF3600772DC7 /* Network in Frameworks */,
+				B6A7A9022D57C4D500EF1A87 /* AuthService in Frameworks */,
 				BB7927342CF4C609006FAD83 /* SearchUI in Frameworks */,
 				BBD8D4392C9B17F500A623BC /* Extensions in Frameworks */,
 				BB483BAC2CE91FFF008C5B39 /* Components in Frameworks */,
@@ -110,6 +115,8 @@
 				BB79272F2CF4B321006FAD83 /* HomeUI */,
 				BB7927312CF4B321006FAD83 /* ProfileUI */,
 				BB7927332CF4C609006FAD83 /* SearchUI */,
+				B6A7A9012D57C4D500EF1A87 /* AuthService */,
+				B6A7A9032D57C4D500EF1A87 /* MemberService */,
 			);
 			productName = playground;
 			productReference = BB0DDDC82C95F44E002349CE /* playground.app */;
@@ -398,6 +405,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B6A7A9012D57C4D500EF1A87 /* AuthService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AuthService;
+		};
+		B6A7A9032D57C4D500EF1A87 /* MemberService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MemberService;
+		};
 		BB483BA82CE91CFE008C5B39 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BB483BA72CE91CFE008C5B39 /* XCRemoteSwiftPackageReference "Kingfisher" */;
