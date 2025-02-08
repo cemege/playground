@@ -8,14 +8,14 @@
 import SwiftUI
 import Extensions
 import Components
-import Network
+import Member
 
 struct ContentView: View {
     
     // MARK: - Properties
-    private var client: Client = .init()
+    private let memberService: MemberServiceProtocol = MemberService()
     
-    @State private var response: MemberResponse?
+    @State private var memberModel: MemberModel?
     
     var body: some View {
         ScrollView {
@@ -81,7 +81,7 @@ struct ContentView: View {
 private extension ContentView {
     func fetchMember() async {
         let request = MemberRequest.member(id: 1)
-        self.response = await client.fetch(request: request, MemberResponse.self)
+        self.memberModel = await memberService.fetchMember(request: request)
     }
 }
 

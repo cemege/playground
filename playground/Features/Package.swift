@@ -41,12 +41,16 @@ let package = Package(
             name: "ProfileUI",
             dependencies: baseDependencies
         ),
+        .testTarget(
+            name: "ProfileUITests",
+            dependencies: ["ProfileUI"]
+        ),
         .target(
             name: "SearchUI",
             dependencies: baseDependencies
         ),
         .testTarget(
-            name: "ProfileUITests",
+            name: "SearchUITests",
             dependencies: ["ProfileUI"]
         )
     ]
