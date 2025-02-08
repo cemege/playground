@@ -8,7 +8,7 @@
 import Network
 
 public protocol MemberServiceProtocol: Sendable {
-    func fetchMember(request: MemberRequest) async -> MemberModel?
+    func fetchMember(request: MemberRequest) async -> Result<MemberModel, NetworkError>
 }
 
 public final class MemberService: MemberServiceProtocol {
@@ -19,7 +19,7 @@ public final class MemberService: MemberServiceProtocol {
         self.client = client
     }
     
-    public func fetchMember(request: MemberRequest) async -> MemberModel? {
+    public func fetchMember(request: MemberRequest) async -> Result<MemberModel, NetworkError> {
         return await client.fetch(request: request, MemberModel.self)
     }
 }

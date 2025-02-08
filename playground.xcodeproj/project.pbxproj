@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B660BBAC2D57DDEE009287B7 /* DummyJsonService in Frameworks */ = {isa = PBXBuildFile; productRef = B660BBAB2D57DDEE009287B7 /* DummyJsonService */; };
 		B6A7A9022D57C4D500EF1A87 /* AuthService in Frameworks */ = {isa = PBXBuildFile; productRef = B6A7A9012D57C4D500EF1A87 /* AuthService */; };
 		B6A7A9042D57C4D500EF1A87 /* MemberService in Frameworks */ = {isa = PBXBuildFile; productRef = B6A7A9032D57C4D500EF1A87 /* MemberService */; };
 		BB483BA92CE91CFE008C5B39 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB483BA82CE91CFE008C5B39 /* Kingfisher */; };
@@ -52,6 +53,7 @@
 				B6A7A9042D57C4D500EF1A87 /* MemberService in Frameworks */,
 				BB483BA92CE91CFE008C5B39 /* Kingfisher in Frameworks */,
 				BB5203DA2CF0DF3600772DC7 /* Network in Frameworks */,
+				B660BBAC2D57DDEE009287B7 /* DummyJsonService in Frameworks */,
 				B6A7A9022D57C4D500EF1A87 /* AuthService in Frameworks */,
 				BB7927342CF4C609006FAD83 /* SearchUI in Frameworks */,
 				BBD8D4392C9B17F500A623BC /* Extensions in Frameworks */,
@@ -117,6 +119,7 @@
 				BB7927332CF4C609006FAD83 /* SearchUI */,
 				B6A7A9012D57C4D500EF1A87 /* AuthService */,
 				B6A7A9032D57C4D500EF1A87 /* MemberService */,
+				B660BBAB2D57DDEE009287B7 /* DummyJsonService */,
 			);
 			productName = playground;
 			productReference = BB0DDDC82C95F44E002349CE /* playground.app */;
@@ -405,6 +408,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B660BBAB2D57DDEE009287B7 /* DummyJsonService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DummyJsonService;
+		};
 		B6A7A9012D57C4D500EF1A87 /* AuthService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AuthService;

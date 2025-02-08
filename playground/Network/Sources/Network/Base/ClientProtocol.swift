@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol ClientProtocol: Sendable {
-    func fetch<T: Decodable>(request: Request, _ decodable: T.Type) async -> T?
+    func fetch<T: Decodable>(request: Request, _ decodable: T.Type) async -> Result<T, NetworkError>
 }

@@ -7,8 +7,12 @@
 
 public enum Domain {
     case `default`
+    case dummyjson
     
     var baseURL: String {
-        ""
+        switch self {
+        case .default: return ""
+        case .dummyjson: return "dummyjson.com"
+        }
     }
 }

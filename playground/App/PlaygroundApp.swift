@@ -18,19 +18,22 @@ struct PlaygroundApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabView(selection: $router.selectedTab) {
-                ForEach(AppTab.allCases) { tab in
-                    TabRootView(tab: tab)
-                        .tag(tab)
-                }
-            }
-            .environment(router)
-            .overlay(alignment: .bottom) {
-                TabbarView()
-                    .environment(router)
-                    .ignoresSafeArea(.keyboard)
-            }
-            .ignoresSafeArea(.keyboard)
+            
+            ContentView()
+            
+//            TabView(selection: $router.selectedTab) {
+//                ForEach(AppTab.allCases) { tab in
+//                    TabRootView(tab: tab)
+//                        .tag(tab)
+//                }
+//            }
+//            .environment(router)
+//            .overlay(alignment: .bottom) {
+//                TabbarView()
+//                    .environment(router)
+//                    .ignoresSafeArea(.keyboard)
+//            }
+//            .ignoresSafeArea(.keyboard)
         }
     }
 }

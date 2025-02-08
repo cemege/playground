@@ -14,7 +14,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(name: "MemberService", targets: ["MemberService"]),
-        .library(name: "AuthService", targets: ["AuthService"])
+        .library(name: "AuthService", targets: ["AuthService"]),
+        .library(name: "DummyJsonService", targets: ["DummyJsonService"])
     ],
     dependencies: [
         .package(name: "Network", path: "../Network"),
@@ -29,6 +30,10 @@ let package = Package(
         ),
         .target(
             name: "AuthService",
+            dependencies: baseDependencies
+        ),
+        .target(
+            name: "DummyJsonService",
             dependencies: baseDependencies
         )
     ]

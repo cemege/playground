@@ -9,11 +9,13 @@ import SwiftUI
 import Extensions
 import Components
 import MemberService
+import DummyJsonService
 
 struct ContentView: View {
     
     // MARK: - Properties
     private let memberService: MemberServiceProtocol = MemberService()
+    private let dummyJsonUserService: UserServiceProtocol = UserService()
     
     @State private var memberModel: MemberModel?
     
@@ -72,7 +74,8 @@ struct ContentView: View {
             .padding()
         }
         .task {
-            await fetchMember()
+//            await fetchMember()
+            await fetchDummyUsers()
         }
     }
 }
@@ -81,7 +84,27 @@ struct ContentView: View {
 private extension ContentView {
     func fetchMember() async {
         let request = MemberRequest.member(id: 1)
-        self.memberModel = await memberService.fetchMember(request: request)
+        let result = await memberService.fetchMember(request: request)
+        switch result {
+        case let .success(member):
+            memberModel = member
+        case let .failure(error):
+            //TODO: alert presenting
+            print(error.localizedDescription)
+        }
+    }
+    
+    func fetchDummyUsers() async {
+        let request = UserRequest.users
+        let result = await dummyJsonUserService.fetchUser(request: request)
+        
+        switch result {
+        case let .success(users):
+            print(users)
+            
+        case let .failure(error):
+            print(error.localizedDescription)
+        }
     }
 }
 

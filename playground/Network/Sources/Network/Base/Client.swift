@@ -18,15 +18,19 @@ public final class Client: ClientProtocol {
     }
     
     // MARK: - Fetch
-    public func fetch<T: Decodable>(request: Request, _ decodable: T.Type) async -> T? {
-        let result = await fetch(request: request, response: T.self)
-        switch result {
-        case let .success(response): return response
-        case .failure: return nil
+    public func fetch<T: Decodable>(request: Request, _ decodable: T.Type) async -> Result<T, NetworkError> {
+        do {
+            return try await fetch(request: request, response: decodable)
+        } catch let error as NetworkError {
+            //TODO: Alert presenting
+            return .failure(error)
+        } catch {
+            //TODO: Alert presenting
+            return .failure(NetworkError(type: .unknown, message: "Unknown Error"))
         }
     }
     
-    private func fetch<T: Decodable>(request: Request, response: T.Type) async -> Result<T, NetworkError> {
+    private func fetch<T: Decodable>(request: Request, response: T.Type) async throws -> Result<T, NetworkError> {
         guard let urlRequest = request.buildURLRequest() else {
             return .failure(NetworkError(type: .notFound, message: "Invalid URL"))
         }
