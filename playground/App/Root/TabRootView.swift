@@ -38,6 +38,7 @@ struct TabRootView: View {
                     }
                 }
                 .environment(\.currentTab, tab)
+                .environment(router)
         }
     }
 }

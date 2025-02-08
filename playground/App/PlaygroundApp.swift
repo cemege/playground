@@ -14,7 +14,6 @@ import Router
 struct PlaygroundApp: App {
     
     // MARK: - Properties
-    @State var client: Client = .init()
     @State var router: Router = .init()
     
     var body: some Scene {
@@ -25,7 +24,6 @@ struct PlaygroundApp: App {
                         .tag(tab)
                 }
             }
-            .environment(client)
             .environment(router)
             .overlay(alignment: .bottom) {
                 TabbarView()

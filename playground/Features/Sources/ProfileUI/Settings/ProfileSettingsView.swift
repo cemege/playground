@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Router
 
 public struct ProfileSettingsView: View {
+    
+    @Environment(Router.self) var router
     
     // MARK: - init
     public init() {}

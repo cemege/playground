@@ -8,7 +8,6 @@
 import Foundation
 import Observation
 
-@Observable
 public final class Client: Sendable {
     
     // MARK: - Properties
@@ -45,5 +44,3 @@ public final class Client: Sendable {
         }
     }
 }
-
-

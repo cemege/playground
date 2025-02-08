@@ -12,7 +12,8 @@ import Network
 
 struct ContentView: View {
     
-    @Environment(\.client) var client: Client
+    // MARK: - Properties
+    private var client: Client = .init()
     
     @State private var response: MemberResponse?
     
