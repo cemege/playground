@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B660B5A02D6B74F300174458 /* Macros in Frameworks */ = {isa = PBXBuildFile; productRef = B660B59F2D6B74F300174458 /* Macros */; };
 		B660BBAC2D57DDEE009287B7 /* DummyJsonService in Frameworks */ = {isa = PBXBuildFile; productRef = B660BBAB2D57DDEE009287B7 /* DummyJsonService */; };
 		B6A7A9022D57C4D500EF1A87 /* AuthService in Frameworks */ = {isa = PBXBuildFile; productRef = B6A7A9012D57C4D500EF1A87 /* AuthService */; };
 		B6A7A9042D57C4D500EF1A87 /* MemberService in Frameworks */ = {isa = PBXBuildFile; productRef = B6A7A9032D57C4D500EF1A87 /* MemberService */; };
@@ -31,6 +32,7 @@
 				Components,
 				Extensions,
 				Features,
+				Macros,
 				Network,
 				Router,
 				Services,
@@ -51,6 +53,7 @@
 				BB5203E32CF0FAB200772DC7 /* Router in Frameworks */,
 				BB7927322CF4B321006FAD83 /* ProfileUI in Frameworks */,
 				B6A7A9042D57C4D500EF1A87 /* MemberService in Frameworks */,
+				B660B5A02D6B74F300174458 /* Macros in Frameworks */,
 				BB483BA92CE91CFE008C5B39 /* Kingfisher in Frameworks */,
 				BB5203DA2CF0DF3600772DC7 /* Network in Frameworks */,
 				B660BBAC2D57DDEE009287B7 /* DummyJsonService in Frameworks */,
@@ -120,6 +123,7 @@
 				B6A7A9012D57C4D500EF1A87 /* AuthService */,
 				B6A7A9032D57C4D500EF1A87 /* MemberService */,
 				B660BBAB2D57DDEE009287B7 /* DummyJsonService */,
+				B660B59F2D6B74F300174458 /* Macros */,
 			);
 			productName = playground;
 			productReference = BB0DDDC82C95F44E002349CE /* playground.app */;
@@ -408,6 +412,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B660B59F2D6B74F300174458 /* Macros */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Macros;
+		};
 		B660BBAB2D57DDEE009287B7 /* DummyJsonService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DummyJsonService;

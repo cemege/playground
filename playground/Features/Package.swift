@@ -7,7 +7,8 @@ let baseDependencies: [PackageDescription.Target.Dependency] = [
     .product(name: "Network", package: "Network"),
     .product(name: "Router", package: "Router"),
     .product(name: "Extensions", package: "Extensions"),
-    .product(name: "Components", package: "Components")
+    .product(name: "Components", package: "Components"),
+    .product(name: "Macros", package: "Macros")
 ]
 
 let package = Package(
@@ -17,14 +18,15 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(name: "HomeUI", targets: ["HomeUI"]),
         .library(name: "ProfileUI", targets: ["ProfileUI"]),
-        .library(name: "SearchUI", targets: ["SearchUI"])
+        .library(name: "SearchUI", targets: ["SearchUI"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(name: "Network", path: "../Network"),
         .package(name: "Router", path: "../Router"),
         .package(name: "Extensions", path: "../Extensions"),
-        .package(name: "Components", path: "../Components")
+        .package(name: "Components", path: "../Components"),
+        .package(name: "Macros", path: "../Macros")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
