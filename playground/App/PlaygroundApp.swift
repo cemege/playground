@@ -9,6 +9,9 @@ import SwiftUI
 import Extensions
 import Network
 import Router
+import HomeUI
+import SearchUI
+import ProfileUI
 
 @main
 struct PlaygroundApp: App {
@@ -16,24 +19,28 @@ struct PlaygroundApp: App {
     // MARK: - Properties
     @State var router: Router = .init()
     
+    init() {
+        Task {
+            await HomeUI.registerHomeUIRoutes()
+            await ProfileUI.registerProfileUIRoutes()
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
-            
-            ContentView()
-            
-//            TabView(selection: $router.selectedTab) {
-//                ForEach(AppTab.allCases) { tab in
-//                    TabRootView(tab: tab)
-//                        .tag(tab)
-//                }
-//            }
-//            .environment(router)
-//            .overlay(alignment: .bottom) {
-//                TabbarView()
-//                    .environment(router)
-//                    .ignoresSafeArea(.keyboard)
-//            }
-//            .ignoresSafeArea(.keyboard)
+            TabView(selection: $router.selectedTab) {
+                ForEach(AppTab.allCases) { tab in
+                    TabRootView(tab: tab)
+                        .tag(tab)
+                }
+            }
+            .environment(router)
+            .overlay(alignment: .bottom) {
+                TabbarView()
+                    .environment(router)
+                    .ignoresSafeArea(.keyboard)
+            }
+            .ignoresSafeArea(.keyboard)
         }
     }
 }
