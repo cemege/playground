@@ -10,7 +10,7 @@ This repository serves as a playground for experimenting with various Swift conc
 
 ### Prerequisites
 
-- Xcode 14.0 or later
+- Xcode 16.0 or later
 - Swift 6.0 or later
 
 ### Installation
@@ -35,6 +35,62 @@ This project includes various Swift packages and implementations:
 - **Networking**: Demonstrates network client and error handling.
 - **Services**: Includes dummy services for testing purposes.
 - **UI Components**: Contains SwiftUI views and components for navigation and testing.
+- **Cross Package Routing**: Features a modular routing system that enables navigation between different Swift packages without creating direct dependencies.
+
+### Network Features
+
+The Network Swift package provides a robust, protocol-oriented networking layer for handling API communications:
+
+- **Protocol-Oriented Design**: Built around `ClientProtocol` and `EndpointProtocol` for flexible implementation and testability.
+- **Type-Safe API Requests**: Strongly-typed request and response models ensure compile-time safety.
+- **Comprehensive Error Handling**: Built-in `NetworkError` system with detailed error types and descriptive messages.
+- **SwiftUI Integration**: Environment values for dependency injection of the network client across your application.
+- **URL Component Building**: Intelligent URL construction with support for complex query parameters and path components.
+
+Example usage:
+
+```swift
+// Create a request
+struct ProductsRequest: Request {
+    var endpoint: EndpointProtocol {
+        ProductsEndpoint()
+    }
+}
+
+// Use the client to fetch data
+@Environment(\.client) var client
+
+func fetchProducts() async {
+    let result = await client.fetch(request: ProductsRequest(), ProductsResponse.self)
+    switch result {
+    case .success(let response):
+        // Handle successful response
+    case .failure(let error):
+        // Handle error
+    }
+}
+```
+
+### Cross Package Routing Features
+
+The recently added cross package navigation system provides:
+
+- **Type-Safe Navigation**: Type-safe navigation within and between Swift packages.
+- **Route Registry**: Central registry for routes that can be accessed by string identifiers.
+- **RouteProtocol**: Common protocol for all navigation destinations across packages.
+- **Decoupled Architecture**: Prevents dependency cycles between feature packages.
+
+Example usage:
+
+```swift
+// Register routes during app initialization
+await RouteRegistry.shared.register(id: "profile.settings") { _ in ProfileUIRoutes.settings }
+
+// Navigate to a route in another package
+if let destination = RouteRegistry.shared.route(forId: "profile.settings", param: "") {
+    router.move(to: .profile, destination: destination)
+}
+```
 
 ## Contributing
 
