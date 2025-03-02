@@ -23,19 +23,10 @@ struct TabRootView: View {
     var body: some View {
         @Bindable var router = router
         
-        NavigationStack(path: $router[tab]) {
+        NavigationStack(path: binding(for: tab)) {
             tab.rootView
-                .navigationDestination(for: RouterDestination.self) { destination in
-                    switch destination {
-                    case .homeList:
-                        HomeListView()
-                        
-                    case .searchResult:
-                        SearchResultView()
-                        
-                    case .profileSettings:
-                        ProfileSettingsView()
-                    }
+                .navigationDestination(for: AnyRouteProtocol.self) { destination in
+                    destination.wrappedValue.view()
                 }
                 .environment(\.currentTab, tab)
                 .environment(router)
@@ -57,6 +48,26 @@ extension AppTab {
         case .profile:
             ProfileView()
         }
+    }
+}
+
+// MARK: - AnyRouteProtocol Binding
+private extension TabRootView {
+    /// Creates a two-way binding between the router's navigation path for a specific tab
+    /// and SwiftUI's NavigationStack path binding.
+    ///
+    /// This function handles the type conversion between the router's storage format
+    /// (`[any RouteProtocol]`) and NavigationStack's required format (`[AnyRouteProtocol]`).
+    /// It wraps each route in an `AnyRouteProtocol` for type erasure when getting the path,
+    /// and unwraps them when setting the path back to the router.
+    ///
+    /// - Parameter tab: The app tab to create a navigation path binding for
+    /// - Returns: A binding that can be passed to NavigationStack's path parameter
+    func binding(for tab: AppTab) -> Binding<[AnyRouteProtocol]> {
+        Binding(
+            get: { (router.paths[tab] ?? []).map(AnyRouteProtocol.init) },
+            set: { router.paths[tab] = $0.map(\.wrappedValue) }
+        )
     }
 }
 
