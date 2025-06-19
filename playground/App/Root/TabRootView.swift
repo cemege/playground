@@ -72,5 +72,6 @@ private extension TabRootView {
 }
 
 #Preview {
-    TabRootView(tab: .profile)
+    TabRootView(tab: .home)
+        .environment(Router())
 }
