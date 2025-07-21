@@ -19,12 +19,11 @@ struct PlaygroundApp: App {
     // MARK: - Properties
     @State var router: Router = .init()
     
-    init() {
-        Task {
-            await HomeUI.registerHomeUIRoutes()
-            await ProfileUI.registerProfileUIRoutes()
-        }
-    }
+    // Static route registration - happens once when type is first accessed
+    private static let _registerRoutes: Void = {
+        registerHomeUIRoutes()
+        registerProfileUIRoutes()
+    }()
     
     var body: some Scene {
         WindowGroup {

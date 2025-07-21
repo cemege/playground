@@ -17,14 +17,13 @@ import SwiftUI
 /// Usage:
 /// - Register routes at app startup with `register(id:builder:)`
 /// - Resolve routes at runtime with `route(forId:param:)`
-@MainActor
-public final class RouteRegistry {
+public final class RouteRegistry: @unchecked Sendable {
     /// Shared instance that serves as the central registry for all routes.
     public static let shared = RouteRegistry()
     
     /// Storage for registered route builders, keyed by string identifiers.
     /// Each builder takes an optional parameter and returns a RouteProtocol instance.
-    private var routes: [String: (Any) -> any RouteProtocol] = [:]
+    private let routes: NSMutableDictionary = NSMutableDictionary()
     
     /// Registers a route with a unique string identifier and a builder function.
     ///
@@ -47,7 +46,8 @@ public final class RouteRegistry {
     ///   - id: The string identifier for the route to resolve
     ///   - param: An optional parameter to pass to the route builder
     /// - Returns: A RouteProtocol instance if the route exists, or nil if not found
-    public func route(forId id: String, param: Any) -> (any RouteProtocol)? { //TODO: Could param be optional? (Any?)
-        return routes[id]?(param)
+    public func route(forId id: String, param: Any) -> (any RouteProtocol)? {
+        guard let builder = routes[id] as? (Any) -> any RouteProtocol else { return nil }
+        return builder(param)
     }
 }

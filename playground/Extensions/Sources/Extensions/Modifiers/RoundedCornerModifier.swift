@@ -24,7 +24,7 @@ public extension View {
         radius: CGFloat = 4,
         corners: UIRectCorner = .allCorners
     ) -> some View {
-        clipShape(RoundedCorner(radius: radius, corners: corners) )
+        clipShape(RoundedCorner(radius: radius, corners: corners))
             .overlay(RoundedCorner(radius: radius, corners: corners)
                 .stroke(borderColor, lineWidth: lineWidth))
     }
@@ -34,5 +34,30 @@ public extension View {
         corners: UIRectCorner = .allCorners
     ) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
+    }
+}
+
+public extension View {
+    func dashedBorder(color: Color = .gray, lineWidth: CGFloat = 1, dash: [CGFloat] = [5], cornerRadius: CGFloat = 0) -> some View {
+        self.background(
+            DashedRoundedRectangle(cornerRadius: cornerRadius)
+                .stroke(
+                    color,
+                    style: StrokeStyle(lineWidth: lineWidth, dash: dash)
+                )
+        )
+    }
+}
+
+public struct DashedRoundedRectangle: Shape {
+    public let cornerRadius: CGFloat
+    
+    public func path(in rect: CGRect) -> Path {
+        Path { path in
+            path.addRoundedRect(
+                in: rect,
+                cornerSize: CGSize(width: cornerRadius, height: cornerRadius)
+            )
+        }
     }
 }
